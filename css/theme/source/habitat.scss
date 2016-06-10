@@ -1,0 +1,169 @@
+/**
+ * Habitat theme for reveal.js.
+ *
+ * Derived from "Black" By Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+// Include theme-specific fonts
+@import url(../../lib/font/source-sans-pro/source-sans-pro.css);
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: #eee;
+
+$mainColor: #5c6670;
+$headingColor: #87B09A;
+
+$mainFontSize: 38px;
+$mainFont: 'All Round Gothic W01 Book', 'Source Sans Pro', Helvetica, sans-serif;
+$headingFont: 'All Round Gothic W01 Demi', 'Source Sans Pro', Helvetica, sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: normal;
+$headingFontWeight: 000;
+// $headingFontWeight: 600;
+$linkColor: #ff9012;
+$linkColorHover: lighten( $linkColor, 15% );
+$selectionBackgroundColor: lighten( $linkColor, 25% );
+
+$heading1Size: 2.5em;
+$heading2Size: 1.6em;
+$heading3Size: 1.3em;
+$heading4Size: 1.0em;
+
+section.has-light-background {
+	&, h1, h2, h3, h4, h5, h6 {
+		color: #fff;
+	}
+}
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+.reveal h2 {
+  color: #4296B4;
+}
+
+.reveal h3 {
+  color: #5c6670;
+}
+
+.reveal .hab-green {
+  color: #87b09a;
+}
+
+.reveal .hab-dark-grey {
+  color: #5c6670;
+}
+
+.reveal .hab-light-grey {
+  color: #c3c6c8;
+}
+
+.reveal .hab-red {
+  color: #eb6852;
+}
+
+.reveal .hab-orange {
+  color: #ff9012;
+}
+
+.reveal .hab-blue {
+  color: #4296b4;
+}
+
+.reveal .hab-beige {
+  color: #debfa5;
+}
+
+.reveal div.see-through {
+  background-color: #eee;
+  opacity: 0.9;
+  padding: 20px;
+  border-radius: 40px 10px;
+}
+
+.reveal div.solid {
+  background-color: #eee;
+  padding: 20px;
+  border-radius: 40px 10px;
+}
+
+.reveal pre {
+	display: block;
+	position: relative;
+	width: 90%;
+	margin: $blockMargin auto;
+	text-align: left;
+	font-size: 0.55em;
+	font-family: monospace;
+	line-height: 1.2em;
+	word-wrap: break-word;
+	box-shadow: none;
+}
+.reveal code {
+	font-family: monospace;
+}
+
+.reveal pre code {
+	display: block;
+	padding: 5px;
+	overflow: auto;
+	max-height: 400px;
+	word-wrap: break-word;
+  font-family: "Source Sans Pro";
+  font-size: 16pt;
+}
+
+.reveal .slides section .fragment.highlight-yellow,
+.reveal .slides section .fragment.highlight-current-yellow {
+  opacity: 1;
+  visibility: visible;
+}
+
+.reveal .slides section .fragment.highlight-current-yellow.current-fragment {
+  background-color: #FFFF00;
+}
+
+.reveal iframe {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.reveal .split-screen {
+  width: 100%;
+  height: 500px;
+}
+
+.reveal .split-screen .left {
+  float: left;
+  width: 70%;
+  height: 100%;
+}
+
+.reveal .split-screen .left pre code {
+  font-size: 14pt;
+}
+
+.reveal .split-screen .right {
+  float: left;
+  width: 30%;
+  height: 100%;
+}
+
+.reveal section img {
+  background: none;
+  background-blend-mode: normal;
+}

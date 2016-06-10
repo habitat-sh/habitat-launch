@@ -1,0 +1,110 @@
+{
+  "_args": [
+    [
+      "tty.js@~0.2.15",
+      "/Users/adam/Documents/habitat-launch"
+    ]
+  ],
+  "_from": "tty.js@>=0.2.15 <0.3.0",
+  "_id": "tty.js@0.2.15",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/tty.js",
+  "_nodeVersion": "0.12.7",
+  "_npmUser": {
+    "email": "chjjeffrey@gmail.com",
+    "name": "chjj"
+  },
+  "_npmVersion": "2.13.2",
+  "_phantomChildren": {
+    "active-x-obfuscator": "0.0.1",
+    "base64id": "0.1.0",
+    "buffer-crc32": "0.2.1",
+    "bytes": "0.2.1",
+    "debug": "2.2.0",
+    "keypress": "0.1.0",
+    "multiparty": "2.2.0",
+    "options": "0.0.6",
+    "pause": "0.0.1",
+    "policyfile": "0.0.4",
+    "raw-body": "0.0.3",
+    "redis": "0.7.3",
+    "tinycolor": "0.0.1",
+    "uid2": "0.0.3"
+  },
+  "_requested": {
+    "name": "tty.js",
+    "raw": "tty.js@~0.2.15",
+    "rawSpec": "~0.2.15",
+    "scope": null,
+    "spec": ">=0.2.15 <0.3.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/tty.js/-/tty.js-0.2.15.tgz",
+  "_shasum": "88233eaa73d1853a8bc94e8af787b7cdc7548fa7",
+  "_shrinkwrap": null,
+  "_spec": "tty.js@~0.2.15",
+  "_where": "/Users/adam/Documents/habitat-launch",
+  "author": {
+    "name": "Christopher Jeffrey"
+  },
+  "bin": {
+    "tty.js": "./bin/tty.js"
+  },
+  "bugs": {
+    "url": "https://github.com/chjj/tty.js/issues"
+  },
+  "dependencies": {
+    "express": "3.4.4",
+    "pty.js": ">= 0.2.13",
+    "socket.io": "0.9.16",
+    "term.js": ">= 0.0.5"
+  },
+  "description": "A terminal for your browser",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "88233eaa73d1853a8bc94e8af787b7cdc7548fa7",
+    "tarball": "https://registry.npmjs.org/tty.js/-/tty.js-0.2.15.tgz"
+  },
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "gitHead": "1996ff663a2794966c3690af85d7758b510f0341",
+  "homepage": "https://github.com/chjj/tty.js",
+  "keywords": [
+    "term",
+    "terminal",
+    "tty",
+    "xterm"
+  ],
+  "license": "MIT",
+  "main": "./index.js",
+  "maintainers": [
+    {
+      "name": "chjj",
+      "email": "chjjeffrey@gmail.com"
+    }
+  ],
+  "man": [
+    "./man/tty.js.1"
+  ],
+  "name": "tty.js",
+  "optionalDependencies": {},
+  "preferGlobal": false,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/chjj/tty.js.git"
+  },
+  "scripts": {},
+  "tags": [
+    "term",
+    "terminal",
+    "tty",
+    "xterm"
+  ],
+  "version": "0.2.15"
+}

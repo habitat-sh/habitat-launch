@@ -1,0 +1,805 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="css/term.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/habitat.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/solarized-light.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <script type="text/javascript" src="//fast.fonts.net/jsapi/2eb69eac-ab69-4627-978f-31e0a9f079cb.js"></script>
+    <script src="node_modules/tty.js/socket.io/socket.io.js"></script>
+    <script src="term.js"></script>
+    <script src="options.js"></script>
+    <script src="tty.js"></script>
+    <script src="user.js"></script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+          <section data-background="images/habitat-67.jpg">
+            <!-- https://flic.kr/p/ffk5X -->
+            <div class="see-through">
+              <img src="images/chef-logo.svg" alt="Chef Software" class="plain stretched" style="width: 50%"/>
+            </div>
+          </section>
+          <section data-background="images/vision.jpg">
+            <!-- https://flic.kr/p/dTGUbb -->
+            <div class="see-through">
+              <h1>Our Vision</h1>
+              <h3>The most enduring and transformative companies use Chef to become fast, efficient, and innovative software driven organizations</h3>
+            </div>
+          </section>
+          <section data-background="images/logos-bg-01.png">
+            <h2 class="hab-orange">Thousands of customers</h2>
+            <hr/>
+            <h2>Every industry, every stage</h2>
+            <aside class="notes">
+              <h2>8 years</h2>
+              <hr/>
+              <h2>Thousands of customers</h2>
+              <hr/>
+              <h2>Across every industry, at every stage</h2>
+            </aside>
+          </section>
+          <section data-background="images/people-over-process.jpg">
+            <div class="see-through">
+              <h1 class="hab-green">People</h1>
+              <hr/>
+              <h1 class="hab-blue">Product</h1>
+              <hr/>
+              <h1 class="hab-red">Companies</h1>
+            </div>
+          </section>
+          <section data-background="images/circles.jpg">
+            <!-- https://flic.kr/p/rcEUS -->
+            <img src="images/culture-people-technology.svg" class="plain" alt="Culture and Technology People" width="50%"/>
+          </section>
+          <section data-background="images/step-back.jpg">
+            <!-- https://flic.kr/p/pLaHB9 -->
+            <div class="solid">
+                <h1>Build</h1>
+                <hr/>
+                <h1 class="hab-blue">Deploy</h1>
+                <hr/>
+                <h1 class="hab-orange">Manage</h1>
+            </div>
+          </section>
+          <section data-transition="fade-out" data-background="images/perspective.jpg">
+            <!-- https://flic.kr/p/3JcgEy -->
+            <div class="solid">
+              <h3>Enterprise Application Lifecycle</h3>
+              <img src="images/enterprise-app-lifecycle.png" class="plain" alt="Enterprise Application Lifecycle"/>
+            </div>
+          </section>
+          <section data-background="images/silo.jpg">
+            <div class="fragment see-through" data-fragment-index="1">
+              <h2 class="fragment hab-green" data-fragment-index="1">Design for our silo</h2>
+              <hr class="fragment" data-fragment-index="2"/>
+              <h2 class="fragment hab-blue" data-fragment-index="2">Forced integration</h2>
+            </div>
+            <!-- https://flic.kr/p/dzVMVq -->
+            <aside class="notes">
+              <ul>
+                <li>Built tools for each silo</li>
+                <li>Fail to see when problems could be best solved earlie in the cycle</li>
+                <li>Require lifecycle approaches to integrate with the universe, requiring abstraction</li>
+              </ul>
+            </aside>
+          </section>
+          <section data-background="images/big-web.png">
+              <!-- https://flic.kr/p/e5wZ3t -->
+              <div class="solid">
+                <h3>Big Web Application Lifecycle</h3>
+                <img src="images/best-app-lifecycle.png" class="plain" alt="Big Web Application Lifecycle"/>
+              </div>
+              <aside class="notes">
+                <ul>
+                  <li>Built a platform!</li>
+                  <li>Each one slightly different - sometimes everything in house, down to the hardware!</li>
+                </ul>
+              </aside>
+          </section>
+          <section data-background="images/bespoke.jpg">
+            <div class="fragment see-through" data-fragment-index="1">
+              <h2 class="fragment hab-green" data-fragment-index="1">Control over the application</h2>
+              <hr class="fragment" data-fragment-index="2"/>
+              <h2 class="fragment hab-blue" data-fragment-index="2">The platform is the product</h2>
+            </div>
+            <!-- https://flic.kr/p/hBRyTd -->
+            <aside class="notes">
+                <ul>
+                  <li>Tightly coupled the problem domain and software architecture to their implementation</li>
+                  <li>Works great - if you write to the platform. Color outside the lines, and you're done</li>
+                </ul>
+            </aside>
+          </section>
+          <section data-background="images/freedom.jpg">
+            <!-- https://flic.kr/p/fqhYE4 -->
+            <div class="solid fragment">
+                <h1>Build</h1>
+                <hr/>
+                <h1 class="hab-blue">Deploy</h1>
+                <hr/>
+                <h1 class="hab-orange">Manage</h1>
+            </div>
+          </section>
+          <section data-background="images/surf.jpg">
+            <!-- https://flic.kr/p/ngbcCb -->
+            <div class="see-through">
+            <img src="images/Habitat_logo_FINAL.png" alt="Habitat" class="plain"/>
+            </div>
+          </section>
+          <section data-background="images/sky.jpg">
+            <!-- https://flic.kr/p/qxA6e5 -->
+              <img src="images/Habitat-diamond.png" alt="Habitat" class="plain" style="background-color: none;"/>
+            <h2 class="hab-dark-grey">Application Automation</h2>
+            <aside class="notes">
+              <ul>
+                <li> Thinks about automation from the perspective of the application </li>
+                <li> Thinks holistically about how we build, manage, and deploy </li>
+                <li> Decoupled from the infrasrutcture choice - we choose the infrastructure based on what the
+                     application needs to perform its function best; not based on what we can manage easiest </li>
+                <li> Because Management belongs ot the Application, not the Infrastructure </li>
+              </ul>
+            </aside>
+          </section>
+
+          <section data-background="images/travel.jpg">
+            <!-- https://flic.kr/p/nKmTGY -->
+            <div class="see-through">
+            <span class="hab-orange">The automation travels with the application</span>
+            </div>
+          </section>
+
+          <section data-background="images/cliff.jpg">
+            <!-- https://flic.kr/p/4CgNNz -->
+            <div class="see-through">
+              <h2>The Production Cliff</h2>
+              <img src="images/difficulty-curve-07.png" alt="Difficulty Curve"/>
+            </div>
+          </section>
+
+          <section data-background="images/a-team.jpg">
+            <!-- https://flic.kr/p/bX4sLL -->
+            <div class="see-through">
+              <h1>Starts with a <span class="hab-blue">plan</span></h1>
+            </div>
+          </section>
+
+          <section data-background="images/plan.jpg">
+            <!-- https://flic.kr/p/dx7KQS -->
+            <div class="solid">
+              <h2 class="hab-green">Simple, native and declarative</h2>
+<div class="split-screen">
+<div class="left">
+                <pre class="stretch">
+                <code class="bash" data-trim data-noescape>
+<span class="fragment highlight-current-yellow" data-fragment-index=1>pkg_name=redis</span>
+<span class="fragment highlight-current-yellow" data-fragment-index=1>pkg_origin=core</span>
+<span class="fragment highlight-current-yellow" data-fragment-index=1>pkg_version=3.0.7</span>
+<span class="fragment highlight-current-yellow" data-fragment-index=1>pkg_license=('BSD')</span>
+<span class="fragment highlight-current-yellow" data-fragment-index=1>pkg_maintainer="The Habitat Maintainers &lt;humans@habitat.sh&gt;"</span>
+<span class="fragment highlight-current-yellow" data-fragment-index=1>pkg_source=http://download.redis.io/releases/${pkg_name}-${pkg_version}.tar.gz</span>
+<span class="fragment highlight-current-yellow" data-fragment-index=1>pkg_shasum=b2a791c4ea3bb7268795c45c6321ea5abcc24457178373e6a6e3be6372737f23</span>
+<span class="fragment highlight-current-yellow" data-fragment-index=1>pkg_bin_dirs=(bin)</span>
+<span class="fragment highlight-current-yellow" data-fragment-index=2>pkg_build_deps=(core/make core/gcc)</span>
+<span class="fragment highlight-current-yellow" data-fragment-index=2>pkg_deps=(core/glibc)</span>
+<span class="fragment highlight-current-yellow" data-fragment-index=3>pkg_svc_run="bin/redis-server $pkg_svc_config_path/redis.config"</span>
+<span class="fragment highlight-current-yellow" data-fragment-index=3>pkg_expose=(6379)</span>
+
+<span class="fragment highlight-current-yellow" data-fragment-index=4>do_build() {
+  make
+}</span></code>
+</pre>
+</div>
+<div class="right">
+<p class="hab-blue fragment" data-fragment-index=1>Low abstraction</p>
+<hr class="fragment" data-fragment-index=2/>
+<p class="hab-red fragment" data-fragment-index=2>Complete dependencies</p>
+<hr class="fragment" data-fragment-index=3/>
+<p class="hab-orange fragment" data-fragment-index=3>Declare services</p>
+<hr class="fragment" data-fragment-index=4/>
+<p class="hab-red fragment" data-fragment-index=4>Simple functions</p>
+</div>
+            </div>
+<span class="hab-beige">plan.sh</span>
+</div>
+          </section>
+
+          <section data-background="images/source.jpg">
+            <!-- https://flic.kr/p/6FMrJH -->
+            <div class="solid">
+              <h2 class="hab-green">Plans come from an <span class="hab-blue">origin</span></h2>
+              <div class="split-screen">
+                <div class="left">
+                  <iframe src="http://localhost:8080" class="stretch"></iframe>
+                </div>
+                <div class="right">
+                  <p class="hab-green">Every artifact signed</p>
+                  <hr/>
+                  <p class="hab-orange">Secure by default</p>
+                  <hr/>
+                  <p class="hab-red">Trivial to override</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <section id="studio" data-background="images/studio.jpg">
+              <!-- https://flic.kr/p/6psAb2 -->
+              <div class="solid">
+                <h2 class="hab-green">Built in a <span class="hab-blue">studio</span></h2>
+                <div class="split-screen">
+                  <div class="left">
+                    <iframe src="http://localhost:8080" class="stretch"></iframe>
+                  </div>
+                  <div class="right">
+                    <p class="hab-green">Clean room environment</p>
+                    <hr/>
+                    <p class="hab-orange">Safe by default</p>
+                    <hr/>
+                    <p class="hab-red">Installs dependencies</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section data-background="images/options.jpg">
+              <!-- https://flic.kr/p/pviGTp -->
+              <div class="solid">
+                <h2 class="hab-green">Includes every option</h2>
+                <div class="split-screen">
+                  <div class="left">
+                    <pre class="stretch">
+                <code class="ini" data-trim data-noescape>
+<span class="fragment highlight-current-yellow" data-fragment-index=2># Accept connections on the specified port, default is 6379.
+# If port 0 is specified Redis will not listen on a TCP socket.</span>
+port = 6379
+<span class="fragment highlight-current-yellow" data-fragment-index=2># TCP listen() backlog.</span>
+tcp-backlog = 511
+
+<span class="fragment highlight-current-yellow" data-fragment-index=2># bind = [ "192.168.1.100", "10.0.0.1" ]
+# bind = [ "127.0.0.1" ]
+# bind = [] - listen on all interfaces</span>
+<span class="fragment highlight-current-yellow" data-fragment-index=3>bind = []</span>
+
+timeout = 0
+tcp-keepalive = 0
+loglevel = "notice"
+</code>
+                    </pre>
+                  </div>
+                  <div class="right">
+                    <div class="right">
+                      <p class="fragment hab-green" data-fragment-index="1">Human Centric</p>
+                      <hr class="fragment" data-fragment-index="2"/>
+                      <p class="fragment hab-orange" data-fragment-index="2">Supports comments</p>
+                      <hr class="fragment" data-fragment-index="3"/>
+                      <p class="hab-red fragment" data-fragment-index="3">Complex data structures</p>
+                    </div>
+                  </div>
+                </div>
+                <span class="hab-beige">default.toml</span>
+              </div>
+            </section>
+            <section data-background="images/cat.jpg">
+              <!-- https://flic.kr/p/69489U -->
+              <div class="see-through">
+                <h2 class="hab-green">Translated with templates</h2>
+                <div class="split-screen">
+                  <div class="left">
+                    <pre class="stretch">
+                <code class="handlebars" data-trim data-noescape>
+daemonize no
+<span class="fragment highlight-current-yellow" data-fragment-index=2>port {{cfg.port}}</span>
+tcp-backlog {{cfg.tcp-backlog}}
+
+<span class="fragment highlight-current-yellow" data-fragment-index=3>{{#if cfg.bind}}
+bind {{cfg.bind}}
+{{/if}}
+
+{{#each cfg.save}}
+save {{this.sec}} {{this.keys}}
+{{/each}</span>
+</code>
+                    </pre>
+                  </div>
+                  <div class="right">
+                    <div class="right">
+                      <p class="fragment hab-green" data-fragment-index="1">Minimal</p>
+                      <hr class="fragment" data-fragment-index="2"/>
+                      <p class="fragment hab-orange" data-fragment-index="2">Substitution</p>
+                      <hr class="fragment" data-fragment-index="3"/>
+                      <p class="hab-red fragment" data-fragment-index="3">Branching &amp; Looping</p>
+                    </div>
+                  </div>
+                </div>
+                <span class="hab-beige">config/redis.conf</span>
+              </div>
+            </section>
+            <section data-background="images/hooks.jpg">
+              <!-- https://flic.kr/p/4ViE3v -->
+              <div class="see-through">
+                <h2 class="hab-green">Lifecycle hooks</h2>
+                <div class="split-screen">
+                  <div class="left">
+                    <pre class="stretch">
+                <code class="handlebars" data-trim data-noescape>
+#!/bin/sh
+
+# These paths need to exist for nginx to run
+mkdir -p \
+  {{pkg.svc_var_path}}/nginx/fastcgi \
+  {{pkg.svc_var_path}}/nginx/proxy \
+  {{pkg.svc_var_path}}/nginx/scgi \
+  {{pkg.svc_var_path}}/nginx/uwsgi
+
+rm -rf {{pkg.svc_static_path}} &amp;&amp; cp -r {{pkg.path}}/dist {{pkg.svc_static_path}}
+ln -sf {{pkg.svc_config_path}}/habitat.conf.js {{pkg.svc_static_path}}
+daemonize no
+</code>
+                    </pre>
+                  </div>
+                  <div class="right">
+                    <div class="right">
+                      <p class="fragment hab-green" data-fragment-index="1">Custom behavior</p>
+                      <hr class="fragment" data-fragment-index="2"/>
+                      <p class="fragment hab-orange" data-fragment-index="2">Init, Run</p>
+                      <hr class="fragment" data-fragment-index="3"/>
+                      <p class="hab-red fragment" data-fragment-index="3">Health</p>
+                    </div>
+                  </div>
+                </div>
+                <span class="hab-beige">hooks/init</span>
+              </div>
+            </section>
+            <section data-background="images/finish.jpg">
+              <!-- https://flic.kr/p/auXr96 -->
+              <div class="see-through">
+              <h1><a href="#/studio">Lets check on our build</a></h1>
+              </div>
+            </section>
+          </section>
+
+          <section data-background="images/willem.jpg" data-transition-speed="slow">
+            <!-- https://flic.kr/p/DgftTL -->
+            <div class="see-through">
+              <h2 class="hab-green">Stored in a <span class="hab-blue">depot</span></h2>
+              <div class="split-screen">
+                <div class="left">
+                  <iframe src="http://localhost:8080" class="stretch"></iframe>
+                </div>
+                <div class="right">
+                  <p class="hab-green">Central location</p>
+                  <hr/>
+                  <p class="hab-orange">Publicly hosted</p>
+                  <hr/>
+                  <p class="hab-red">Lightweight views</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section data-background="images/habs.jpg">
+            <!-- https://flic.kr/p/7b6nj9 -->
+            <div class="see-through">
+              <h2 class="hab-green">Installed by <span class="hab-blue">hab</span></h2>
+              <div class="split-screen">
+                <div class="left">
+                  <iframe src="http://localhost:8080" class="stretch"></iframe>
+                </div>
+                <div class="right">
+                  <p class="hab-green">Easy pattern</p>
+                  <hr/>
+                  <p class="hab-orange">Shortcuts</p>
+                  <hr/>
+                  <p class="hab-red">Increasing specificity</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section data-background="images/disk.jpg">
+            <!-- https://flic.kr/p/xzEadt -->
+            <div class="see-through">
+              <h2 class="hab-green">Packages on disk</h2>
+              <div class="split-screen">
+                <div class="left">
+                  <iframe src="http://localhost:8080" class="stretch"></iframe>
+                </div>
+                <div class="right">
+                  <p class="hab-green">/hab</p>
+                  <hr/>
+                  <p class="hab-blue">Binaries and Config</p>
+                  <hr/>
+                  <p class="hab-orange">Metadata</p>
+                  <hr/>
+                  <p class="hab-red">Side-by-side</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section data-background="images/rodeo.jpg">
+            <!--https://flic.kr/p/cQC8U3 -->
+            <div class="see-through">
+              <h2 class="hab-green">Run on any 64 bit Linux</h2>
+              <hr/>
+              <h2 class="hab-orange">Easily support proprietary software</h2>
+            </div>
+          </section>
+
+          <section data-background="images/container.jpg">
+            <!-- https://flic.kr/p/piD2pu -->
+            <div class="solid">
+              <h2 class="hab-green">Post-process packages</h2>
+              <div class="split-screen">
+                <div class="left">
+                  <iframe src="http://localhost:8080" class="stretch"></iframe>
+                </div>
+                <div class="right">
+                  <p class="hab-green">Any package</p>
+                  <hr/>
+                  <p class="hab-blue">Docker</p>
+                  <hr/>
+                  <p class="hab-orange">ACI</p>
+                  <hr/>
+                  <p class="hab-red">Mesosphere</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section data-background="images/supervisors.jpg">
+            <!-- https://flic.kr/p/nC6Fmk -->
+            <div class="see-through">
+              <h2 class="hab-green"><span class="hab-blue">Supervisor</span> runs services</h2>
+              <div class="split-screen">
+                <div class="left">
+                  <iframe src="http://localhost:8080" class="stretch"></iframe>
+                </div>
+                <div class="right">
+                  <p class="hab-green">Installs automatically</p>
+                  <hr/>
+                  <p class="hab-blue">Keeps things running</p>
+                  <hr/>
+                  <p class="hab-orange">Manages configuration</p>
+                  <hr/>
+                  <p class="hab-red">Data is the API</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section data-background="images/environment.jpg">
+            <!-- https://flic.kr/p/fqpYjH -->
+            <div class="see-through">
+              <h2 class="hab-green">Environment configuration</h2>
+              <div class="split-screen">
+                <div class="left">
+                  <iframe src="http://localhost:8080" class="stretch"></iframe>
+                </div>
+                <div class="right">
+                  <p class="hab-green">Print config options</p>
+                  <hr/>
+                  <p class="hab-blue">12-Factor Style</p>
+                  <hr/>
+                  <p class="hab-orange">Externally enforced</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section data-background="images/file.jpg">
+            <!-- https://flic.kr/p/ao7jBT -->
+            <div class="see-through">
+              <h2 class="hab-green">File configuration</h2>
+              <div class="split-screen">
+                <div class="left">
+                  <iframe src="http://localhost:8080" class="stretch"></iframe>
+                </div>
+                <div class="right">
+                  <p class="hab-green">More flexible than environment</p>
+                  <hr/>
+                  <p class="hab-blue">Universal location</p>
+                  <hr/>
+                  <p class="hab-orange">Externally enforced</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section data-background="images/ring.jpg">
+            <!-- https://flic.kr/p/e8yk3m -->
+            <div class="see-through">
+              <h2 class="hab-green">Supervisors form a <span class="hab-blue">ring</span></h2>
+              <div class="split-screen">
+                <div class="left">
+                  <img src="images/gossip-ring.png" class="plain" alt="Ring"/>
+                </div>
+                <div class="right">
+                  <p class="hab-green">Peers</p>
+                  <hr/>
+                  <p class="hab-blue">Service Groups</p>
+                  <hr/>
+                  <p class="hab-orange">Gossip</p>
+                  <hr/>
+                  <p class="hab-red">Availability increases with scale</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section data-background="images/security.jpg">
+            <!-- https://flic.kr/p/9SwcD7 -->
+            <div class="see-through">
+              <h1 class="hab-green">Ring Security</h1>
+              <h2>Public Key Cryptography</h2>
+              <hr/>
+              <h2 class="hab-orange">Symmetric Key Encryption on the Wire</h2>
+              <hr/>
+              <h2 class="hab-red">Encrypt config, distribute files (SSL Certificates, etc)</h2>
+            </div>
+          </section>
+
+          <section data-background="images/halo.jpg">
+            <!-- https://flic.kr/p/bn6fGr -->
+            <div class="see-through">
+              <h2 class="hab-green">Ring configuration</h2>
+              <div style="height: 500px">
+              <iframe src="http://localhost:8080" class="stretch"></iframe>
+              </div>
+              <span class="fragment hab-red">The automation travels with the application</span>
+            </div>
+          </section>
+
+          <section data-background="images/topo.png">
+            <!-- https://flic.kr/p/9WdfTj -->
+            <div class="solid">
+              <h2 class="hab-green">Supervisors support <span class="hab-blue">topologies</span></h2>
+              <div class="split-screen">
+                <div class="left">
+                  <img src="images/topology.png" class="plain" alt="Topologies"/>
+                </div>
+                <div class="right">
+                  <p class="hab-green">Dynamic configuration</p>
+                  <hr/>
+                  <p class="hab-blue">Service group level</p>
+                  <hr/>
+                  <p class="hab-orange">Uses the Ring</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section data-background="images/leader.jpg">
+            <!-- https://flic.kr/p/k8zqqh -->
+            <div class="see-through">
+              <h2 class="hab-green">The leader topology</h2>
+              <div style="height: 500px">
+              <iframe src="http://localhost:8080" class="stretch"></iframe>
+              </div>
+              <span class="fragment hab-red">The automation travels with the application</span>
+            </div>
+          </section>
+
+          <section data-background="images/purple.jpg">
+            <!-- https://flic.kr/p/odYwuk -->
+            <div class="see-through">
+              <h2 class="hab-green"><span class="hab-blue">Data is the API</span></h2>
+              <div>
+                <div style="float:left; width: 70%;">
+                  <pre>
+              <code class="handlebars">
+{{#if svc.me.follower}}
+  {{#with svc.leader}}
+slaveof {{ip}} {{port}}
+  {{/with}}
+{{/if}}
+              </code>
+                  </pre>
+              </div>
+              <div style="float:left; width: 30%">
+                  <p class="hab-orange">No Changes to Applications</p>
+                  <hr/>
+                  <p class="hab-green">Topology</p>
+                  <hr/>
+                  <p class="hab-red">Services</p>
+                  <hr/>
+                  <p class="hab-blue">Package Data</p>
+              </div>
+                <span class="hab-beige">config/redis.conf</span>
+              </div>
+            </div>
+          </section>
+
+          <section data-background="images/strategy.jpg">
+            <!-- https://flic.kr/p/cpLKpJ -->
+            <div class="see-through">
+              <h2 class="hab-green">Supervisors provide update <span class="hab-blue">strategies</span></h2>
+              <div class="split-screen">
+                <div class="left">
+                  <img src="images/update-strategies.png" alt="Update Strategies" class="plain"/>
+                </div>
+                <div class="right">
+                  <p class="hab-green">Topology aware</p>
+                  <hr/>
+                  <p class="hab-blue">Track views in the depot</p>
+                  <hr/>
+                  <p class="hab-orange">Ideal for Continuous Delivery</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section data-background="images/now.jpg">
+            <!-- https://flic.kr/p/8Njdpv -->
+            <div class="see-through">
+              <h2 class="hab-green">Update Strategies</h2>
+              <div class="split-screen">
+                <div class="left">
+                  <iframe src="http://localhost:8080" class="stretch"></iframe>
+                </div>
+                <div class="right">
+                  <p class="hab-green">Deployment Orchestration</p>
+                  <hr/>
+                  <p class="hab-blue">Easy to trigger</p>
+                </div>
+              </div>
+              <span class="fragment hab-red">The automation travels with the application</span>
+            </div>
+          </section>
+
+          <section data-background="images/discovery.jpg">
+            <!-- https://flic.kr/p/bSqkX8 -->
+            <div class="see-through">
+              <h2 class="hab-green">Service Discovery</h2>
+              <div style="height: 500px">
+              <iframe src="http://localhost:8080" class="stretch"></iframe>
+              </div>
+              <span class="hab-orange">Bind names to data; the Data is the API</span>
+            </div>
+          </section>
+
+          <section data-background="images/rest.jpg">
+            <!-- https://flic.kr/p/rkvmJR -->
+            <div class="see-through">
+              <h2 class="hab-green">Supervisors provide a <span class="hab-blue">REST API</span></h2>
+              <div class="split-screen">
+                <div class="left">
+                  <img src="images/rest-api.png" alt="Rest API" class="plain"/>
+                </div>
+                <div class="right">
+                  <p class="hab-green">External Actors</p>
+                  <hr/>
+                  <p class="hab-blue">Health and Status</p>
+                  <hr/>
+                  <p class="hab-orange">Supervisor Debugging</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section data-background="images/travel-with.jpg">
+            <!-- https://flic.kr/p/getU6Y -->
+            <div class="see-through">
+              <h1>Application Automation</h1>
+              <h2 class="hab-blue">Automation travles with the application</h2>
+              <hr/>
+              <h2 class="hab-orange">Legacy &amp; Cloud Native Software</h2>
+            </div>
+          </section>
+
+          <section data-background="images/management.jpg">
+            <!-- https://flic.kr/p/4AZM7Z -->
+          </section>
+
+          <section data-background="images/team.jpg">
+            <!-- https://flic.kr/p/BnHamR -->
+            <div class="fragment see-through" data-fragment-index="1">
+              <h2 class="fragment hab-green" data-fragment-index="1">Simplify</h2>
+              <hr class="fragment" data-fragment-index="2"/>
+              <h2 class="fragment hab-blue" data-fragment-index="2">Empower</h2>
+              <hr class="fragment" data-fragment-index="3"/>
+              <h2 class="fragment hab-orange" data-fragment-index="3">Acellerate</h2>
+            </div>
+          </section>
+
+          <section data-background="images/porche.jpg">
+            <!-- https://flic.kr/p/axUEqt -->
+            <div class="see-through">
+              <h2>So they can become fast, efficient, and innovative software driven organizations</h2>
+            </div>
+          </section>
+
+          <section data-background="images/surf.jpg">
+            <!-- https://flic.kr/p/aNDKW6 -->
+            <h1 class="hab-blue">Available Today</h1>
+            <h2><a href="http://www.habitat.sh">http://www.habitat.sh</a></h2>
+          </section>
+
+          <section data-background="images/one-more-thing.jpg">
+            <!-- https://flic.kr/p/jZ6DyL -->
+            <h1 class="hab-light-grey">One more thing</h1>
+          </section>
+
+          <section data-background="images/fireworks.jpg">
+            <!-- https://flic.kr/p/oqocGB -->
+            <div class="see-through">
+            <h1 class="hab-orange">It's all open source</h1>
+            <h2>Apache License</h2>
+            (even the website)
+            </div>
+          </section>
+
+          <section data-background="images/help.jpg">
+            <!-- https://flic.kr/p/4LEz6H -->
+            <div class="see-through">
+            <h1 class="hab-red">Chef customers have support for Habitat today</h1>
+            </div>
+          </section>
+
+          <section data-background="images/garden.jpg">
+            <!-- https://flic.kr/p/7WiT8t -->
+            <div class="see-through">
+              <h1>Much more to do</h1>
+              <ul>
+                <li>Automated, public build service</li>
+                <li>More topologies</li>
+                <li>More update strategies</li>
+                <li>More plans</li>
+                <li>More package export formats</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="images/surf.jpg">
+            <div class="see-through">
+              <img src="images/Habitat-by-Chef-logo.png" alt="Habitat by Chef" class="plain"/>
+              <hr/>
+              <h2><a href="http://www.habitat.sh">http://www.habitat.sh</a></h2>
+            </div>
+          </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        history: true,
+        controls: false,
+        progress: true,
+        touch: true,
+        slideNumber: true,
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+          { src: 'plugin/markdown/marked.js' },
+          { src: 'plugin/markdown/markdown.js' },
+          { src: 'plugin/notes/notes.js', async: true },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+
+    </script>
+  </body>
+</html>

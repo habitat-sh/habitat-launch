@@ -1,0 +1,7 @@
+.terminal {
+  border: #000 solid 5px;
+  font-family: "DejaVu Sans Mono", "Liberation Mono", monospace;
+  font-size: 22px;
+  color: #f0f0f0;
+  background: #000;
+}
