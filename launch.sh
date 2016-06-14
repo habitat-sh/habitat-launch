@@ -1,9 +1,10 @@
 #!/bin/bash
-cd ~/src/habitat
 launching=1;
 
+cd /Users/adam/Documents/habitat-launch
+
 while [ $launching = 1 ]; do
-  if env HAB_ORIGIN=adam make -s shell 2>/dev/null; then
+  if docker-compose run -e HAB_AUTH_TOKEN=$HAB_AUTH_TOKEN -e HAB_ORIGIN=adam --rm shell 2> /dev/null; then
     launching=0
   else
     time=$(($RANDOM % 10))

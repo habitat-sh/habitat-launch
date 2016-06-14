@@ -1,0 +1,28 @@
+shell:
+  build: .
+  privileged: true
+  volumes:
+    - /Users/adam/src/habitat/plans:/src
+    - /var/run/docker.sock:/var/run/docker.sock
+  volumes_from:
+    - cache_src
+    - cache_keys
+    - cargo
+
+cache_src:
+  image: tianon/true
+  command: /true
+  volumes:
+    - /hab/cache/src
+
+cache_keys:
+  image: tianon/true
+  command: /true
+  volumes:
+    - /hab/cache/keys
+
+cargo:
+  image: tianon/true
+  command: /true
+  volumes:
+    - /cargo-cache
