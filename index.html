@@ -763,25 +763,6 @@ daemonize no
 
           </section>
 
-          <section data-background="images/security.jpg">
-            <!-- https://flic.kr/p/9SwcD7 -->
-            <div class="see-through">
-              <h1 class="hab-green">Ring Security</h1>
-              <h2>Public Key Cryptography</h2>
-              <hr/>
-              <h2 class="hab-orange">Symmetric Key Encryption on the Wire</h2>
-              <hr/>
-              <h2 class="hab-red">Encrypt config, distribute files (SSL Certificates, etc)</h2>
-            </div>
-            <aside class="notes">
-              <ul>
-                <li>Encrypt configuration with keys</li>
-                <li>Symmetric on the wire</li>
-                <li>Both configruation and files!</li>
-              </ul>
-            </aside>
-          </section>
-
           <section data-background="images/halo.jpg">
             <!-- https://flic.kr/p/bn6fGr -->
             <div class="see-through">
@@ -931,32 +912,6 @@ slaveof {{ip}} {{port}}
               <li>You specify the pattern, the supervisors execute it</li>
               <li>Only the first is implemented</li>
             </ul>
-          </section>
-
-          <section data-background="images/now.jpg">
-            <!-- https://flic.kr/p/8Njdpv -->
-            <div class="see-through">
-              <h2 class="hab-green">Update Strategies</h2>
-              <div class="split-screen">
-                <div class="left">
-                  <iframe src="http://localhost:8080" class="stretch"></iframe>
-                </div>
-                <div class="right">
-                  <p class="hab-green">Deployment Orchestration</p>
-                  <hr/>
-                  <p class="hab-blue">Easy to trigger</p>
-                </div>
-              </div>
-              <span class="fragment hab-red">The automation travels with the application</span>
-            </div>
-            <aside class="notes">
-              <ul>
-                <li>Open another terminal</li>
-                <li><pre>hab start adam/redis --strategy at-once</pre></li>
-                <li><pre>hab pkg upload results/adam-redis</pre></li>
-                <li>Watch the glory</li>
-              </ul>
-            </aside>
           </section>
 
           <section data-background="images/rest.jpg">
